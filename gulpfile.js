@@ -12,6 +12,7 @@ var clean = require('gulp-clean');
 const scssFiles = ['./assets/scss/**/*.scss'];
 const scssMain = ['./assets/scss/main.scss'];
 const pathStyleDest = './assets/css';
+const browserSync = require('browser-sync').create();
 
 // SASS
 gulp.task('style', function () {
@@ -73,3 +74,21 @@ gulp.task('notify', function () {
   return gulp.src('')
     .pipe(notify({message: 'DRAKARYS!!!', onLast: true}));
 });
+
+// Serve files and set a custom port
+gulp.task('serve', function () {
+  browserSync.init({
+      server: {
+          baseDir: "./" // Set your project's root directory
+      },
+      port: 3000 // Set custom port (change as needed)
+  });
+
+  // Watch for changes and reload
+  gulp.watch("*.html").on("change", browserSync.reload);
+  gulp.watch("css/**/*.css").on("change", browserSync.reload);
+  gulp.watch("js/**/*.js").on("change", browserSync.reload);
+});
+
+// Default task
+// gulp.task('default', gulp.series('serve'));

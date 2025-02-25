@@ -4,9 +4,11 @@
   "private": true,
   "scripts": {
     "start": "gulp",
-    "build": "gulp build"
+    "build": "gulp build",
+    "serve": "gulp serve"
   },
   "dependencies": {
+    "dotenv": "^16.4.7",
     "gulp": "^3.9.1",
     "gulp-autoprefixer": "^4.0.0",
     "gulp-clean": "^0.4.0",
@@ -16,10 +18,14 @@
     "gulp-sass": "^5.1.0",
     "gulp-sourcemaps": "^2.6.0",
     "gulp-watch": "^4.3.11",
+    "nodemailer": "^6.10.0",
     "run-sequence": "^2.1.0",
     "sass": "^1.57.1"
   },
   "overrides": {
     "graceful-fs": "^4.2.10"
+  },
+  "devDependencies": {
+    "browser-sync": "^3.0.3"
   }
 }
