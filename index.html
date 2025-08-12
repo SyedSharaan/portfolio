@@ -157,7 +157,7 @@
         <h3 class="resume-list_title">employment</h3>
         <div class="resume-list__block">
           <p class="resume-list__block-title">Doctorite Inc</p>
-          <p class="resume-list__block-date">2020 - 2023</p>
+          <p class="resume-list__block-date">2020 - 2025</p>
           <p>
             Lead Full Stack Developer
           </p>
@@ -776,7 +776,7 @@
             </form>
           </div>
           <div class="footer">
-            <p>© 2025 Syed Sharaan. All Rights Reserved</p>
+            <p>© <span id="currentYear"></span> Syed Sharaan. All Rights Reserved</p>
           </div>
         </div>
       </div>
@@ -864,6 +864,9 @@
         alert("Failed to send email.");
       }
     });
+  </script>
+  <script>
+    document.getElementById('currentYear').textContent = new Date().getFullYear();
   </script>
 </body>
 
